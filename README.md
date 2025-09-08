@@ -1,36 +1,179 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Website
+
+A modern, professional personal website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Features
+
+- 🎨 **Modern Design**: Clean, minimalistic design with professional aesthetics
+- 📱 **Fully Responsive**: Optimized for mobile, tablet, and desktop devices
+- ⚡ **Fast Performance**: Built with Next.js for optimal performance
+- 🎭 **Smooth Animations**: Beautiful animations powered by Framer Motion
+- 🔍 **SEO Optimized**: Complete SEO setup with meta tags and Open Graph
+- 📧 **Contact Form**: Functional contact form with validation
+- 🎯 **Accessibility**: Semantic HTML and keyboard navigation support
+
+## Sections
+
+- **Hero**: Eye-catching introduction with call-to-action buttons
+- **About**: Personal bio, skills, and professional background
+- **Portfolio**: Showcase of projects with live demos and source code links
+- **Contact**: Contact form and social media links
+- **Footer**: Additional links and social media integration
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd owner
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Personal Information
 
-## Learn More
+Update the following files with your personal information:
 
-To learn more about Next.js, take a look at the following resources:
+1. **`src/app/layout.tsx`** - Update metadata, title, and description
+2. **`src/components/layout/Navbar.tsx`** - Change the logo/name
+3. **`src/components/sections/Hero.tsx`** - Update name, tagline, and description
+4. **`src/components/sections/About.tsx`** - Update bio, skills, and profile image
+5. **`src/components/sections/Portfolio.tsx`** - Replace with your projects
+6. **`src/components/sections/Contact.tsx`** - Update contact information
+7. **`src/components/layout/Footer.tsx`** - Update social links and contact info
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Colors**: Modify the color scheme in `tailwind.config.ts`
+- **Fonts**: Change fonts in `src/app/layout.tsx` and `tailwind.config.ts`
+- **Animations**: Customize animations in individual components
 
-## Deploy on Vercel
+### Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Hero Section
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Update your name, tagline, and description
+- Modify call-to-action button text and links
+
+#### About Section
+
+- Replace the placeholder profile image
+- Update your bio and professional background
+- Modify the skills array with your technologies
+
+#### Portfolio Section
+
+- Replace project data with your actual projects
+- Update project images, descriptions, and links
+- Modify technology tags
+
+#### Contact Section
+
+- Update contact information (email, phone, location)
+- Configure the contact form to send emails (requires backend setup)
+- Update social media links
+
+### Images
+
+Replace placeholder images in the `public` folder:
+
+- Add your profile photo
+- Add project screenshots
+- Update favicon and social media images
+
+### SEO
+
+Update SEO information in `src/app/layout.tsx`:
+
+- Website URL
+- Social media handles
+- Keywords
+- Open Graph images
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
+
+### Other Platforms
+
+The app can be deployed to any platform that supports Next.js:
+
+- Netlify
+- AWS Amplify
+- Railway
+- DigitalOcean App Platform
+
+## Technologies Used
+
+- **Next.js 14** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **Lucide React** - Icons
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── layout/
+│   │   ├── Footer.tsx
+│   │   └── Navbar.tsx
+│   ├── sections/
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Hero.tsx
+│   │   └── Portfolio.tsx
+│   └── ui/
+│       ├── Button.tsx
+│       └── Card.tsx
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Support
+
+If you have any questions or need help customizing the website, please open an issue or contact me directly.
+
+---
+
+**Happy coding! 🚀**
