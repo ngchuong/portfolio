@@ -12,7 +12,11 @@ export default function Hero() {
     };
 
     return (
-        <section id="home" className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-background via-muted/30 to-accent/10 relative overflow-hidden py-8 sm:py-12 md:py-16">
+        <section
+            id="home"
+            className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-background via-muted/30 to-accent/10 relative overflow-hidden py-8 sm:py-12 md:py-16"
+            aria-label="Hero section - Introduction to Your Name, Full-Stack Developer"
+        >
             {/* Background decoration */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob"></div>
@@ -32,12 +36,13 @@ export default function Hero() {
                         </span>
                     </h1>
 
-                    <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-6 sm:mb-8 max-w-4xl mx-auto font-medium px-4 animate-fade-in-up-delay-400">
+                    <h2 className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-6 sm:mb-8 max-w-4xl mx-auto font-medium px-4 animate-fade-in-up-delay-400">
                         Full-Stack Developer & UI/UX Designer
-                    </p>
+                    </h2>
 
                     <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-12 sm:mb-16 md:mb-20 max-w-3xl mx-auto leading-relaxed px-4 animate-fade-in-up-delay-600">
                         I create beautiful, functional, and user-centered digital experiences that make a difference.
+                        Specializing in React, Next.js, TypeScript, and modern web technologies with 5+ years of experience.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4 animate-fade-in-up-delay-800">

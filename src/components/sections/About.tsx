@@ -61,18 +61,20 @@ export default function About() {
                         </h3>
                         <div className="space-y-6 text-muted-foreground leading-relaxed">
                             <p className="text-base sm:text-lg">
-                                With over 5 years of experience in web development, I specialize in creating
-                                beautiful, functional, and user-centered digital experiences. I love turning
-                                complex problems into simple, elegant solutions.
+                                With over 5 years of experience in full-stack web development, I specialize in creating
+                                beautiful, functional, and user-centered digital experiences using modern technologies
+                                like React, Next.js, TypeScript, and Node.js. I love turning complex problems into
+                                simple, elegant solutions that deliver exceptional user experiences.
                             </p>
                             <p className="text-base sm:text-lg">
-                                When I&apos;m not coding, you can find me exploring new technologies, contributing
-                                to open-source projects, or sharing knowledge with the developer community.
+                                My expertise spans across frontend development, backend architecture, UI/UX design,
+                                and DevOps practices. When I&apos;m not coding, you can find me exploring new technologies,
+                                contributing to open-source projects, or sharing knowledge with the developer community.
                             </p>
                             <p className="text-base sm:text-lg">
                                 I believe in the power of technology to solve real-world problems and make
                                 people&apos;s lives better. That&apos;s why I&apos;m always excited to work on projects
-                                that have a positive impact.
+                                that have a positive impact and help businesses grow through innovative digital solutions.
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-3">

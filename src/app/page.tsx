@@ -7,15 +7,15 @@ import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <>
       <Navbar />
-      <div className="pt-20">
+      <main className="min-h-screen pt-20">
         <Hero />
         <About />
         <Portfolio />
         <Contact />
-        <Footer />
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
