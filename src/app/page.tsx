@@ -9,11 +9,13 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Contact />
-      <Footer />
+      <div className="pt-20">
+        <Hero />
+        <About />
+        <Portfolio />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 }

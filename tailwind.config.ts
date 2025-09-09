@@ -8,8 +8,40 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
+        },
+        destructive: {
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
+        },
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+      },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       animation: {
         blob: "blob 7s infinite",
@@ -26,6 +58,15 @@ const config: Config = {
         "slide-in-right": "slideInRight 0.6s ease-out forwards",
         "scale-in": "scaleIn 0.5s ease-out forwards",
         "slide-down": "slideDown 0.5s ease-out forwards",
+        float: "float 6s ease-in-out infinite",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        wiggle: "wiggle 1s ease-in-out infinite",
+        "gradient-x": "gradient-x 15s ease infinite",
+        "gradient-y": "gradient-y 15s ease infinite",
+        "gradient-xy": "gradient-xy 15s ease infinite",
+        shimmer: "shimmer 2s linear infinite",
+        typing:
+          "typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite",
       },
       keyframes: {
         blob: {
@@ -108,6 +149,76 @@ const config: Config = {
           "100%": {
             transform: "translateY(0)",
             opacity: "1",
+          },
+        },
+        float: {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-20px)",
+          },
+        },
+        wiggle: {
+          "0%, 100%": {
+            transform: "rotate(-3deg)",
+          },
+          "50%": {
+            transform: "rotate(3deg)",
+          },
+        },
+        "gradient-x": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        "gradient-y": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "center top",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "center bottom",
+          },
+        },
+        "gradient-xy": {
+          "0%, 100%": {
+            "background-size": "400% 400%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "400% 400%",
+            "background-position": "right center",
+          },
+        },
+        shimmer: {
+          "0%": {
+            "background-position": "-200% 0",
+          },
+          "100%": {
+            "background-position": "200% 0",
+          },
+        },
+        typing: {
+          from: {
+            width: "0",
+          },
+          to: {
+            width: "100%",
+          },
+        },
+        "blink-caret": {
+          "from, to": {
+            "border-color": "transparent",
+          },
+          "50%": {
+            "border-color": "var(--primary)",
           },
         },
       },

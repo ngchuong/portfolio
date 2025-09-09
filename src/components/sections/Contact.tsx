@@ -108,22 +108,23 @@ export default function Contact() {
 
     if (isSubmitted) {
         return (
-            <section id="contact" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white">
+            <section id="contact" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-background">
                 <div className="w-full max-w-7xl mx-auto">
                     <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-16 text-center">
                         <div className="animate-scale-in">
-                            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div className="w-20 h-20 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <CheckCircle className="w-10 h-10 text-green-600" />
                             </div>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                            <h2 className="text-3xl font-bold text-foreground mb-4">
                                 Message Sent Successfully!
                             </h2>
-                            <p className="text-gray-600 mb-8">
+                            <p className="text-muted-foreground mb-8">
                                 Thank you for reaching out. I&apos;ll get back to you as soon as possible.
                             </p>
                             <Button
                                 onClick={() => setIsSubmitted(false)}
                                 variant="outline"
+                                className="hover:scale-105 transition-transform duration-200"
                             >
                                 Send Another Message
                             </Button>
@@ -135,13 +136,13 @@ export default function Contact() {
     }
 
     return (
-        <section id="contact" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white">
+        <section id="contact" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-background">
             <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mx-auto">
                 <div className="text-center mb-16 sm:mb-20 md:mb-24 animate-fade-in-up">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12">
                         Get In Touch
                     </h2>
-                    <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
+                    <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
                         Have a project in mind or just want to chat? I&apos;d love to hear from you!
                     </p>
                 </div>
@@ -150,12 +151,12 @@ export default function Contact() {
                     {/* Contact Form */}
                     <div className="animate-slide-in-left">
                         <Card className="p-6 sm:p-8">
-                            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+                            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">
                                 Send me a message
                             </h3>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                                         Name *
                                     </label>
                                     <input
@@ -164,17 +165,17 @@ export default function Contact() {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleInputChange}
-                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${errors.name ? 'border-red-500' : 'border-gray-300'
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 bg-background ${errors.name ? 'border-destructive' : 'border-input'
                                             }`}
                                         placeholder="Your name"
                                     />
                                     {errors.name && (
-                                        <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                                        <p className="mt-1 text-sm text-destructive">{errors.name}</p>
                                     )}
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                                         Email *
                                     </label>
                                     <input
@@ -183,17 +184,17 @@ export default function Contact() {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleInputChange}
-                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 bg-background ${errors.email ? 'border-destructive' : 'border-input'
                                             }`}
                                         placeholder="your.email@example.com"
                                     />
                                     {errors.email && (
-                                        <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                                        <p className="mt-1 text-sm text-destructive">{errors.email}</p>
                                     )}
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                                         Message *
                                     </label>
                                     <textarea
@@ -202,24 +203,24 @@ export default function Contact() {
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         rows={6}
-                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none ${errors.message ? 'border-red-500' : 'border-gray-300'
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 resize-none bg-background ${errors.message ? 'border-destructive' : 'border-input'
                                             }`}
                                         placeholder="Tell me about your project or just say hello!"
                                     />
                                     {errors.message && (
-                                        <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                                        <p className="mt-1 text-sm text-destructive">{errors.message}</p>
                                     )}
                                 </div>
 
                                 <Button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full flex items-center justify-center gap-2"
+                                    className="w-full flex items-center justify-center gap-2 hover:scale-105 transition-transform duration-200"
                                     size="lg"
                                 >
                                     {isSubmitting ? (
                                         <>
-                                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                            <div className="w-5 h-5 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin"></div>
                                             Sending...
                                         </>
                                     ) : (
@@ -236,10 +237,10 @@ export default function Contact() {
                     {/* Contact Information */}
                     <div className="space-y-8 p-4 animate-slide-in-right">
                         <div>
-                            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
                                 Let&apos;s connect
                             </h3>
-                            <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed">
+                            <p className="text-muted-foreground mb-8 text-base sm:text-lg leading-relaxed">
                                 I&apos;m always interested in new opportunities and exciting projects.
                                 Whether you have a question or just want to say hi, I&apos;ll try my
                                 best to get back to you!
@@ -253,23 +254,23 @@ export default function Contact() {
                                     <a
                                         key={info.title}
                                         href={info.href}
-                                        className="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-all duration-200 hover:translate-x-1"
+                                        className="flex items-center space-x-4 p-4 rounded-lg hover:bg-muted transition-all duration-200 hover:translate-x-1 group"
                                     >
-                                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                            <Icon className="w-6 h-6 text-blue-600" />
+                                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-200">
+                                            <Icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-200" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-gray-900">{info.title}</h4>
-                                            <p className="text-gray-600">{info.value}</p>
+                                            <h4 className="font-semibold text-foreground">{info.title}</h4>
+                                            <p className="text-muted-foreground">{info.value}</p>
                                         </div>
                                     </a>
                                 );
                             })}
                         </div>
 
-                        <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl animate-fade-in-up">
-                            <h4 className="font-bold text-gray-900 mb-2">Quick Response</h4>
-                            <p className="text-gray-600 text-sm">
+                        <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-6 rounded-xl animate-fade-in-up border border-primary/20">
+                            <h4 className="font-bold text-foreground mb-2">Quick Response</h4>
+                            <p className="text-muted-foreground text-sm">
                                 I typically respond to messages within 24 hours. For urgent
                                 inquiries, feel free to reach out via phone.
                             </p>

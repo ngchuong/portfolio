@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 const navItems = [
     { name: 'Home', href: '#home' },
@@ -12,6 +13,16 @@ const navItems = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const scrollToSection = (href: string) => {
         const element = document.querySelector(href);
@@ -22,10 +33,13 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100 transition-all duration-300 animate-slide-down">
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+                ? 'bg-background/80 backdrop-blur-xl shadow-lg border-b border-border'
+                : 'bg-background/95 backdrop-blur-md'
+            }`}>
             <div className="flex justify-between items-center h-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
                 {/* Logo */}
-                <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
+                <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
                     Your Name
                 </div>
 
@@ -35,18 +49,20 @@ export default function Navbar() {
                         <button
                             key={item.name}
                             onClick={() => scrollToSection(item.href)}
-                            className="text-gray-700 hover:text-blue-600 transition-all duration-200 font-medium px-4 py-2 rounded-lg hover:bg-gray-50 hover:-translate-y-0.5 whitespace-nowrap"
+                            className="text-foreground/80 hover:text-primary transition-all duration-200 font-medium px-4 py-2 rounded-lg hover:bg-muted hover:-translate-y-0.5 whitespace-nowrap"
                         >
                             {item.name}
                         </button>
                     ))}
+                    <ThemeToggle />
                 </div>
 
                 {/* Mobile menu button */}
-                <div className="md:hidden">
+                <div className="md:hidden flex items-center gap-2">
+                    <ThemeToggle />
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-gray-700 hover:text-blue-600 transition-all duration-200 hover:scale-95"
+                        className="text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-95"
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -55,13 +71,13 @@ export default function Navbar() {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden bg-white/95 backdrop-blur-md rounded-lg shadow-lg mt-2 mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-16 animate-fade-in">
+                <div className="md:hidden bg-background/95 backdrop-blur-xl rounded-lg shadow-lg mt-2 mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-16 animate-fade-in border border-border">
                     <div className="px-4 pt-4 pb-4 space-y-2">
                         {navItems.map((item) => (
                             <button
                                 key={item.name}
                                 onClick={() => scrollToSection(item.href)}
-                                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-all duration-200 font-medium hover:translate-x-1"
+                                className="block w-full text-left px-4 py-3 text-foreground/80 hover:text-primary hover:bg-muted rounded-md transition-all duration-200 font-medium hover:translate-x-1"
                             >
                                 {item.name}
                             </button>

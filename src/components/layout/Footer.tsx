@@ -26,13 +26,13 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-gray-900 text-white">
+        <footer className="bg-secondary text-secondary-foreground">
             <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto py-16 sm:py-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
                     {/* Brand Section */}
                     <div className="space-y-6 p-4 animate-fade-in-up">
-                        <h3 className="text-2xl sm:text-3xl font-bold">Your Name</h3>
-                        <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                        <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Your Name</h3>
+                        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                             Building amazing digital experiences with passion and creativity.
                         </p>
                         <div className="flex space-x-4">
@@ -44,7 +44,7 @@ export default function Footer() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white transition-all duration-200 hover:scale-110 hover:-translate-y-0.5"
+                                        className="text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110 hover:-translate-y-0.5 p-2 rounded-lg hover:bg-primary/10"
                                     >
                                         <Icon size={20} />
                                     </a>
@@ -61,7 +61,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <button
                                         onClick={() => scrollToSection(link.href)}
-                                        className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1"
+                                        className="text-muted-foreground hover:text-primary transition-all duration-200 hover:translate-x-1"
                                     >
                                         {link.name}
                                     </button>
@@ -73,7 +73,7 @@ export default function Footer() {
                     {/* Contact Info */}
                     <div className="space-y-6 p-4 animate-fade-in-up">
                         <h4 className="text-lg sm:text-xl font-semibold">Get In Touch</h4>
-                        <div className="space-y-3 text-gray-300 text-base sm:text-lg">
+                        <div className="space-y-3 text-muted-foreground text-base sm:text-lg">
                             <p>your.email@example.com</p>
                             <p>+1 (555) 123-4567</p>
                             <p>San Francisco, CA</p>
@@ -82,7 +82,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-800 mt-12 sm:mt-16 pt-8 sm:pt-12 text-center text-gray-400 px-4 animate-fade-in">
+                <div className="border-t border-border mt-12 sm:mt-16 pt-8 sm:pt-12 text-center text-muted-foreground px-4 animate-fade-in">
                     <p className="text-sm sm:text-base">&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
                 </div>
             </div>

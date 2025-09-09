@@ -24,9 +24,9 @@ export default function Button({
     const baseClasses = 'font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
     const variantClasses = {
-        primary: 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 focus:ring-blue-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
-        secondary: 'bg-gradient-to-r from-gray-600 to-gray-700 text-white hover:from-gray-700 hover:to-gray-800 focus:ring-gray-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
-        outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500 hover:shadow-lg transform hover:-translate-y-0.5',
+        primary: 'bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary/90 hover:to-accent/90 focus:ring-primary shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
+        secondary: 'bg-gradient-to-r from-secondary to-muted text-secondary-foreground hover:from-secondary/90 hover:to-muted/90 focus:ring-secondary shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
+        outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground focus:ring-primary hover:shadow-lg transform hover:-translate-y-0.5',
     };
 
     const sizeClasses = {
