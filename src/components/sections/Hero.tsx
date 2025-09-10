@@ -2,6 +2,7 @@
 
 import Button from '@/components/ui/Button';
 import { ChevronDown } from 'lucide-react';
+import { Suspense } from 'react';
 
 export default function Hero() {
     const scrollToAbout = () => {
@@ -29,6 +30,7 @@ export default function Hero() {
 
             <div className="text-center relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto">
                 <div className="animate-fade-in-up">
+                    {/* Critical content for LCP - render immediately */}
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 sm:mb-12 leading-tight px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 animate-fade-in-up-delay-200">
                         Hi, I&apos;m{' '}
                         <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
@@ -45,28 +47,30 @@ export default function Hero() {
                         Specializing in React, Next.js, TypeScript, and modern web technologies with 5+ years of experience.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4 animate-fade-in-up-delay-800">
-                        <Button
-                            onClick={scrollToAbout}
-                            size="lg"
-                            className="w-full sm:w-auto min-w-[180px] px-8 py-4"
-                        >
-                            View My Work
-                        </Button>
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            onClick={() => {
-                                const element = document.querySelector('#contact');
-                                if (element) {
-                                    element.scrollIntoView({ behavior: 'smooth' });
-                                }
-                            }}
-                            className="w-full sm:w-auto min-w-[180px] px-8 py-4"
-                        >
-                            Get In Touch
-                        </Button>
-                    </div>
+                    <Suspense fallback={<div className="h-16" />}>
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4 animate-fade-in-up-delay-800">
+                            <Button
+                                onClick={scrollToAbout}
+                                size="lg"
+                                className="w-full sm:w-auto min-w-[180px] px-8 py-4"
+                            >
+                                View My Work
+                            </Button>
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                onClick={() => {
+                                    const element = document.querySelector('#contact');
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="w-full sm:w-auto min-w-[180px] px-8 py-4"
+                            >
+                                Get In Touch
+                            </Button>
+                        </div>
+                    </Suspense>
                 </div>
             </div>
 

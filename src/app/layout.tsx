@@ -2,10 +2,22 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StructuredData from "@/components/seo/StructuredData";
+import PerformanceMonitor from "@/components/analytics/PerformanceMonitor";
+import PreloadResources from "@/components/performance/PreloadResources";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+  preload: true,
+  fallback: [
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "sans-serif"
+  ],
 });
 
 export const metadata: Metadata = {
@@ -95,9 +107,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        <PreloadResources />
         <StructuredData />
       </head>
-      <body className="font-sans antialiased" suppressHydrationWarning>
+      <body className="font-sans antialiased critical-css" suppressHydrationWarning>
+        <PerformanceMonitor />
         {children}
       </body>
     </html>
